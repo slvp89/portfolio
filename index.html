@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjay Hegde | Full Stack Developer</title>
+  <meta name="description"
+    content="Personal portfolio of Sanjay Hegde – Full Stack Developer specializing in modern web apps, AI integrations, and cloud solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">Sanjay D<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-sm">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+      <canvas id="particleCanvas"></canvas>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge"><span class="badge-dot"></span>Available for Work</div>
+      <h1 class="hero-title">
+        Hi, I'm <span class="gradient-text">Sanjay Hegde</span><br />
+        <span class="typewriter" id="typewriter"></span>
+      </h1>
+      <p class="hero-sub">I craft exceptional digital experiences with clean code, creative design, and a passion for
+        solving real-world problems.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="15">0</span><span class="stat-label">Projects</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="1">0</span><span class="stat-label">Years Exp.</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-label">Happy Clients</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-ring">
+        <div class="avatar-wrap">
+          <img src="avatar.png" alt="Sanjay Hegde" class="avatar-img"
+            onerror="this.style.display='none';document.getElementById('avatarFallback').style.display='flex'" />
+          <div id="avatarFallback" class="avatar-fallback">Sanjay D</div>
+        </div>
+      </div>
+      <div class="floating-card card-left">
+        <div class="fc-icon">⚡</div>
+        <div>
+          <div class="fc-title">React</div>
+          <div class="fc-sub">Frontend</div>
+        </div>
+      </div>
+      <div class="floating-card card-right">
+        <div class="fc-icon">🚀</div>
+        <div>
+          <div class="fc-title">Node.js</div>
+          <div class="fc-sub">Backend</div>
+        </div>
+      </div>
+      <div class="floating-card card-bottom">
+        <div class="fc-icon">☁️</div>
+        <div>
+          <div class="fc-title">AWS</div>
+          <div class="fc-sub">Cloud</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-wheel"></div><span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-tag">About Me</div>
+      <h2 class="section-title">Passionate Developer &amp;<br /><span class="gradient-text">Creative Problem
+          Solver</span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a Computer Science student currently pursuing my <strong>MCA (2025–2027)</strong> at Bangalore University,
+            with a strong foundation in Full Stack Development, Python, Java, and Database Systems.</p>
+          <p>When I'm not coding, I explore AI/ML trends, build personal projects, and sharpen my problem-solving skills.
+            I believe great software is built at the intersection of logic and creativity.</p>
+          <div class="about-info-grid">
+            <div class="info-item"><span class="info-label">Name</span><span class="info-val">Sanjay Hegde</span></div>
+            <div class="info-item"><span class="info-label">Degree</span><span class="info-val">MCA (Pursuing)</span></div>
+            <div class="info-item"><span class="info-label">Location</span><span class="info-val">Bangalore, India</span></div>
+            <div class="info-item"><span class="info-label">Email</span><span
+                class="info-val"><a href="mailto:mid81759@gmail.com" style="color:inherit;text-decoration:none;">mid81759@gmail.com</a></span>
+            </div>
+          </div>
+          <a href="#" class="btn btn-primary" download>Download Resume ↓</a>
+        </div>
+        <div class="about-cards">
+          <div class="about-card glow-purple">
+            <div class="ac-icon">💻</div>
+            <h3>MCA – Pursuing</h3>
+            <p>VTU<br /><span class="muted">2025 – 2027 | Current Batch</span></p>
+          </div>
+          <div class="about-card glow-blue">
+            <div class="ac-icon">🎓</div>
+            <h3>BCA – Completed</h3>
+            <p>KUD University<br /><span class="muted">2022 – 2025 | CGPA 8.35</span></p>
+          </div>
+          <div class="about-card glow-pink">
+            <div class="ac-icon">🐙</div>
+            <h3>Open Source</h3>
+            <p>Active contributor on GitHub with projects in Python, Java, and Web Development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section section-dark">
+    <div class="container">
+      <div class="section-tag">Skills</div>
+      <h2 class="section-title">My <span class="gradient-text">Tech Stack</span></h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 class="cat-title">Frontend</h3>
+          <div class="skill-chips">
+            <span class="chip">React.js</span><span class="chip">Next.js</span><span class="chip">TypeScript</span><span
+              class="chip">HTML5</span><span class="chip">CSS3/SASS</span><span class="chip">Tailwind</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar"><span>React.js</span>
+              <div class="bar-track">
+                <div class="bar-fill" data-w="92"></div>
+              </div><span>92%</span>
+            </div>
+            <div class="skill-bar"><span>Next.js</span>
+              <div class="bar-track">
+                <div class="bar-fill" data-w="85"></div>
+              </div><span>85%</span>
+            </div>
+            <div class="skill-bar"><span>TypeScript</span>
+              <div class="bar-track">
+                <div class="bar-fill" data-w="80"></div>
+              </div><span>80%</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3 class="cat-title">Backend</h3>
+          <div class="skill-chips">
+            <span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">Express</span><span
+              class="chip">FastAPI</span><span class="chip">REST APIs</span><span class="chip">GraphQL</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar"><span>Node.js</span>
+              <div class="bar-track">
+                <div class="bar-fill" data-w="88"></div>
+              </div><span>88%</span>
+            </div>
+            <div class="skill-bar"><span>Python</span>
+              <div class="bar-track">
+                <div class="bar-fill" data-w="85"></div>
+              </div><span>85%</span>
+            </div>
+            <div class="skill-bar"><span>FastAPI</span>
+              <div class="bar-track">
+                <div class="bar-fill" data-w="78"></div>
+              </div><span>78%</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3 class="cat-title">Database &amp; Cloud</h3>
+          <div class="skill-chips">
+            <span class="chip">MongoDB</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span
+              class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Firebase</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar"><span>MongoDB</span>
+              <div class="bar-track">
+                <div class="bar-fill" data-w="88"></div>
+              </div><span>88%</span>
+            </div>
+            <div class="skill-bar"><span>AWS</span>
+              <div class="bar-track">
+                <div class="bar-fill" data-w="75"></div>
+              </div><span>75%</span>
+            </div>
+            <div class="skill-bar"><span>Docker</span>
+              <div class="bar-track">
+                <div class="bar-fill" data-w="70"></div>
+              </div><span>70%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tech icon cloud -->
+      <div class="tech-cloud">
+        <div class="tech-icon" style="--d:0s">⚛️<span>React</span></div>
+        <div class="tech-icon" style="--d:.1s">🐍<span>Python</span></div>
+        <div class="tech-icon" style="--d:.2s">🟢<span>Node</span></div>
+        <div class="tech-icon" style="--d:.3s">🐳<span>Docker</span></div>
+        <div class="tech-icon" style="--d:.4s">☁️<span>AWS</span></div>
+        <div class="tech-icon" style="--d:.5s">🍃<span>MongoDB</span></div>
+        <div class="tech-icon" style="--d:.6s">🔷<span>TypeScript</span></div>
+        <div class="tech-icon" style="--d:.7s">🔥<span>Firebase</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-tag">Projects</div>
+      <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web App</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-cat="ai">
+          <div class="project-img" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+            <div class="proj-icon">🤖</div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags"><span class="ptag">Python</span><span class="ptag">TensorFlow</span><span
+                class="ptag">Streamlit</span></div>
+            <h3>Road Extraction AI</h3>
+            <p>Deep learning model for automated road extraction from satellite imagery using U-Net architecture with
+              94% accuracy.</p>
+            <div class="project-links">
+              <a href="#" class="plink">Live Demo ↗</a>
+              <a href="#" class="plink plink-gh">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card featured" data-cat="web">
+          <div class="project-badge">Featured</div>
+          <div class="project-img" style="background:linear-gradient(135deg,#f093fb,#f5576c)">
+            <div class="proj-icon">⚡</div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags"><span class="ptag">React</span><span class="ptag">Node.js</span><span
+                class="ptag">MongoDB</span></div>
+            <h3>Electricity Spike Detector</h3>
+            <p>Real-time electricity usage monitoring dashboard with anomaly detection, predictive alerts, and data
+              visualization.</p>
+            <div class="project-links">
+              <a href="#" class="plink">Live Demo ↗</a>
+              <a href="#" class="plink plink-gh">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-cat="web">
+          <div class="project-img" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">
+            <div class="proj-icon">🛒</div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags"><span class="ptag">Next.js</span><span class="ptag">Stripe</span><span
+                class="ptag">PostgreSQL</span></div>
+            <h3>E-Commerce Platform</h3>
+            <p>Full-featured e-commerce platform with payment integration, inventory management, and real-time order
+              tracking.</p>
+            <div class="project-links">
+              <a href="#" class="plink">Live Demo ↗</a>
+              <a href="#" class="plink plink-gh">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-cat="ai">
+          <div class="project-img" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">
+            <div class="proj-icon">📊</div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags"><span class="ptag">Python</span><span class="ptag">scikit-learn</span><span
+                class="ptag">FastAPI</span></div>
+            <h3>Predictive Analytics Dashboard</h3>
+            <p>ML-powered analytics platform for business intelligence with automated insights and forecasting models.
+            </p>
+            <div class="project-links">
+              <a href="#" class="plink">Live Demo ↗</a>
+              <a href="#" class="plink plink-gh">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-cat="mobile">
+          <div class="project-img" style="background:linear-gradient(135deg,#fa709a,#fee140)">
+            <div class="proj-icon">📱</div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags"><span class="ptag">React Native</span><span class="ptag">Firebase</span></div>
+            <h3>Fitness Tracker App</h3>
+            <p>Cross-platform mobile app for fitness tracking with workout plans, nutrition logging, and progress
+              visualization.</p>
+            <div class="project-links">
+              <a href="#" class="plink">App Store ↗</a>
+              <a href="#" class="plink plink-gh">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-cat="web">
+          <div class="project-img" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)">
+            <div class="proj-icon">💬</div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags"><span class="ptag">Socket.io</span><span class="ptag">React</span><span
+                class="ptag">Node</span></div>
+            <h3>Real-Time Chat App</h3>
+            <p>Scalable real-time messaging platform with end-to-end encryption, file sharing, and video calls via
+              WebRTC.</p>
+            <div class="project-links">
+              <a href="#" class="plink">Live Demo ↗</a>
+              <a href="#" class="plink plink-gh">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section id="achievements" class="section section-dark">
+    <div class="container">
+      <div class="section-tag">Certifications</div>
+      <h2 class="section-title">My <span class="gradient-text">Certifications</span></h2>
+
+
+      <!-- Category: IIT Bombay Training -->
+      <div class="certs-sub-label">🏛️ IIT Bombay – EduPyramids / SINE</div>
+      <div class="cert-cards-grid">
+        <a href="https://drive.google.com/file/d/1SLeU6MT6TIj7y7QDOmeTMtC7kXqX3Oe1/view" target="_blank" class="cert-card">
+          <div class="cert-badge" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">🐍</div>
+          <div class="cert-info">
+            <span class="cert-issuer">IIT Bombay · EduPyramids</span>
+            <h4>C Programming Training</h4>
+            <div class="cert-meta"><span class="cert-score">Score: 75%</span><span class="cert-year">Jan 2026</span></div>
+          </div>
+          <span class="cert-view-btn">View ↗</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1nOU1zMOOl-_I0BolInSpY5EnrgXkbo5s/view" target="_blank" class="cert-card">
+          <div class="cert-badge" style="background:linear-gradient(135deg,#f7971e,#ffd200)">☕</div>
+          <div class="cert-info">
+            <span class="cert-issuer">IIT Bombay · EduPyramids</span>
+            <h4>Java Business Application Training</h4>
+            <div class="cert-meta"><span class="cert-score">Score: 90%</span><span class="cert-year">Jan 2026</span></div>
+          </div>
+          <span class="cert-view-btn">View ↗</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1FVygmF0U2wMT10nwRCk7o4I2tk8hcMs9/view" target="_blank" class="cert-card">
+          <div class="cert-badge" style="background:linear-gradient(135deg,#667eea,#764ba2)">🤖</div>
+          <div class="cert-info">
+            <span class="cert-issuer">IIT Bombay · EduPyramids</span>
+            <h4>Python for Machine Learning Training</h4>
+            <div class="cert-meta"><span class="cert-score">Score: 94%</span><span class="cert-year">May 2026</span></div>
+          </div>
+          <span class="cert-view-btn">View ↗</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1vGCqpY0bToLy48Vn829XyL5G_XK207hH?usp=sharing" target="_blank" class="cert-card">
+          <div class="cert-badge" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">🗄️</div>
+          <div class="cert-info">
+            <span class="cert-issuer">IIT Bombay · EduPyramids</span>
+            <h4>RDBMS PostgreSQL Training</h4>
+            <div class="cert-meta"><span class="cert-score">Score: 90%</span><span class="cert-year">May 2026</span></div>
+          </div>
+          <span class="cert-view-btn">View ↗</span>
+        </a>
+      </div>
+
+      <!-- Category: Industry Simulation -->
+      <div class="certs-sub-label" style="margin-top:2.5rem;">🏢 Industry Job Simulations – Deloitte / Forage</div>
+      <div class="cert-cards-grid">
+        <a href="https://drive.google.com/file/d/1gcxWlMtrSISwShWrtMpJUFxjPxPD8a1f/view" target="_blank" class="cert-card">
+          <div class="cert-badge" style="background:linear-gradient(135deg,#f093fb,#f5576c)">🔒</div>
+          <div class="cert-info">
+            <span class="cert-issuer">Deloitte · Forage</span>
+            <h4>Cyber Security Job Simulation</h4>
+            <div class="cert-meta"><span class="cert-score">Practical Tasks</span><span class="cert-year">Jan 2026</span></div>
+          </div>
+          <span class="cert-view-btn">View ↗</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1iG32roFI6DQLeUQnuVBOxUwHglAW4wCs/view" target="_blank" class="cert-card">
+          <div class="cert-badge" style="background:linear-gradient(135deg,#ffd700,#ff8c00)">📊</div>
+          <div class="cert-info">
+            <span class="cert-issuer">Deloitte · Forage</span>
+            <h4>Data Analytics Job Simulation</h4>
+            <div class="cert-meta"><span class="cert-score">Forensic Technology</span><span class="cert-year">Jan 2026</span></div>
+          </div>
+          <span class="cert-view-btn">View ↗</span>
+        </a>
+      </div>
+
+      <!-- Category: Academic / National -->
+      <div class="certs-sub-label" style="margin-top:2.5rem;">🎓 Academic &amp; National Certifications</div>
+      <div class="cert-cards-grid">
+        <a href="https://drive.google.com/file/d/1Je09jiFuNYwJikgFCGkRfnqkmx6C-gDa/view" target="_blank" class="cert-card">
+          <div class="cert-badge" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">🐍</div>
+          <div class="cert-info">
+            <span class="cert-issuer">NPTEL · IIT Madras</span>
+            <h4>The Joy of Computing using Python</h4>
+            <div class="cert-meta"><span class="cert-score">Elite · 75%</span><span class="cert-year">Jan–Apr 2026</span></div>
+          </div>
+          <span class="cert-view-btn">View ↗</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1JuVOzfvabQWvxE4F-zDBzYqUpTVsi7Lm/view" target="_blank" class="cert-card">
+          <div class="cert-badge" style="background:linear-gradient(135deg,#fa709a,#fee140)">⚙️</div>
+          <div class="cert-info">
+            <span class="cert-issuer">NASSCOM · FutureSkills Prime</span>
+            <h4>Digital Engineering – Gold Category</h4>
+            <div class="cert-meta"><span class="cert-score">Gold (Score ≥ 70%)</span><span class="cert-year">Dec 2025</span></div>
+          </div>
+          <span class="cert-view-btn">View ↗</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-tag">Contact</div>
+      <h2 class="section-title">Let's <span class="gradient-text">Work Together</span></h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-intro">Have a project in mind or want to collaborate? I'm always open to discussing new
+            opportunities and ideas.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="ci-icon">📧</div>
+              <div>
+                <div class="ci-label">Email</div>
+                <div class="ci-val"><a href="mailto:mid81759@gmail.com" style="color:inherit;text-decoration:none;">mid81759@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">📍</div>
+              <div>
+                <div class="ci-label">Location</div>
+                <div class="ci-val">Bangalore, India</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">💼</div>
+              <div>
+                <div class="ci-label">LinkedIn</div>
+                <div class="ci-val"><a href="https://www.linkedin.com/in/sanjay-hegde-702128354/" target="_blank" style="color:inherit;text-decoration:none;">linkedin.com/in/sanjay-hegde</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">🐙</div>
+              <div>
+                <div class="ci-label">GitHub</div>
+                <div class="ci-val"><a href="https://github.com/slvp89" target="_blank" style="color:inherit;text-decoration:none;">github.com/slvp89</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="social-row">
+            <a href="https://github.com/slvp89" target="_blank" class="social-btn" id="github-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/sanjay-hegde-702128354/" target="_blank" class="social-btn" id="linkedin-link">LinkedIn</a>
+            <a href="https://x.com/Sanjay64772865" target="_blank" class="social-btn" id="twitter-link">Twitter / X</a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+            <label for="email">Your Email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" placeholder="Subject" required />
+            <label for="subject">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Send Message ✉️</button>
+          <div class="form-success" id="formSuccess">🎉 Message sent! I'll get back to you soon.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+
+        <p>© 2024 Sanjay Hegde. Built with ❤️ and clean code.</p>
+
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
