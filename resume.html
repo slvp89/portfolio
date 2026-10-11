@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjay D H — Resume | Software Development Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #4338ca;
+      --primary-dark: #312e81;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --accent: #2563eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      font-size: 14px;
+      padding: 24px 16px;
+    }
+
+    /* Resume Container */
+    .resume-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      padding: 44px 48px;
+      border: 1px solid var(--border);
+    }
+
+    /* Action bar on top */
+    .resume-actions {
+      max-width: 860px;
+      margin: 0 auto 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-print {
+      background: #4f46e5;
+      color: #fff;
+    }
+
+    .btn-print:hover {
+      background: #4338ca;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    .btn-back {
+      background: #ffffff;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .btn-back:hover {
+      color: var(--text-main);
+      border-color: #cbd5e1;
+      background: #f1f5f9;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 20px;
+      margin-bottom: 22px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    h1.name {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+
+    .headline {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-item a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .contact-item a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      border-bottom: 1.5px solid #e0e7ff;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* Summary */
+    .summary-text {
+      color: #334155;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    /* Education */
+    .edu-item,
+    .exp-item {
+      margin-bottom: 12px;
+    }
+
+    .edu-item:last-child,
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .item-subtitle {
+      font-size: 13px;
+      color: #475569;
+      font-weight: 500;
+    }
+
+    .item-date {
+      font-size: 12.5px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .grade-badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 1px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    /* Technical Skills */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .skills-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .skills-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .skills-table td {
+      padding: 6px 0;
+      vertical-align: top;
+    }
+
+    .skill-cat-name {
+      font-weight: 700;
+      color: var(--text-main);
+      width: 150px;
+    }
+
+    .skill-list {
+      color: #334155;
+    }
+
+    /* Projects */
+    .project-entry {
+      margin-bottom: 16px;
+    }
+
+    .project-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .project-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .project-tech {
+      font-size: 12px;
+      font-family: 'Fira Code', monospace;
+      color: #4338ca;
+      font-weight: 500;
+    }
+
+    .project-links-line a {
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .project-links-line a:hover {
+      text-decoration: underline;
+    }
+
+    .bullets {
+      list-style-type: disc;
+      padding-left: 18px;
+      margin-top: 4px;
+      color: #334155;
+      font-size: 13px;
+    }
+
+    .bullets li {
+      margin-bottom: 3px;
+    }
+
+    /* Certifications Grid */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      font-size: 13px;
+    }
+
+    .cert-entry {
+      display: flex;
+      flex-direction: column;
+      background: #f8fafc;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #edf2f7;
+    }
+
+    .cert-title-link {
+      font-weight: 600;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .cert-title-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .cert-org {
+      font-size: 11.5px;
+      color: #64748b;
+    }
+
+    .cert-score-tag {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #059669;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+        font-size: 12px;
+      }
+
+      .resume-actions {
+        display: none !important;
+      }
+
+      .resume-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+
+      @page {
+        margin: 10mm 12mm;
+        size: A4;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .section-title {
+        color: #1e1b4b;
+        border-color: #cbd5e1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .resume-container {
+        padding: 24px 20px;
+      }
+
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .skill-cat-name {
+        padding-bottom: 2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Action Bar -->
+  <div class="resume-actions">
+    <a href="index.html" class="action-btn btn-back">← Back to Portfolio</a>
+    <button onclick="window.print()" class="action-btn btn-print">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <div class="resume-container">
+    <!-- Header -->
+    <header>
+      <div class="header-top">
+        <div>
+          <h1 class="name">Sanjay D H</h1>
+          <div class="headline">Software Engineer &amp; Full Stack Developer</div>
+        </div>
+      </div>
+      <div class="contact-bar">
+        <span class="contact-item">📍 Bangalore, India</span>
+        <span class="contact-item">📧 <a href="mailto:mid81759@gmail.com">mid81759@gmail.com</a></span>
+        <span class="contact-item">🔗 <a href="https://github.com/slvp89" target="_blank">github.com/slvp89</a></span>
+        <span class="contact-item">💼 <a href="https://www.linkedin.com/in/sanjay-hegde-702128354/"
+            target="_blank">linkedin.com/in/sanjay-hegde</a></span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section>
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">
+        Computer Science graduate and Master of Computer Applications (MCA) student at Visvesvaraya Technological
+        University (VTU) with proven hands-on experience developing full-stack web applications, AI/ML computer vision
+        systems, and robust database architectures. Proficient across Core Java (JDBC, OOP, Streams), Python,
+        TypeScript, Next.js, React, Node.js, and relational/NoSQL databases (MySQL, PostgreSQL, MongoDB). Passionate
+        about writing scalable, clean code, building responsive user interfaces, and solving real-world challenges.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2 class="section-title">Education</h2>
+      <div class="edu-item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Master of Computer Applications (MCA)</span>
+            <span class="grade-badge">CGPA: 8.05 / 10.0</span>
+          </div>
+          <span class="item-date">2025 – 2027</span>
+        </div>
+        <div class="item-subtitle">RNS Institute of Technology (RNSIT), Bangalore · Visvesvaraya Technological
+          University (VTU)</div>
+      </div>
+      <div class="edu-item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Bachelor of Computer Applications (BCA)</span>
+            <span class="grade-badge">CGPA: 8.35 / 10.0</span>
+          </div>
+          <span class="item-date">2022 – 2025</span>
+        </div>
+        <div class="item-subtitle">JSS College of UG &amp; PG Studies, Dharwad · Karnatak University Dharwad (KUD)</div>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section>
+      <h2 class="section-title">Technical Skills</h2>
+      <table class="skills-table">
+        <tr>
+          <td class="skill-cat-name">Languages</td>
+          <td class="skill-list">Java (Core Java, JDBC, Streams), Python, TypeScript, JavaScript (ES6+), C, SQL</td>
+        </tr>
+        <tr>
+          <td class="skill-cat-name">Frontend</td>
+          <td class="skill-list">Next.js 14, React.js, Tailwind CSS, HTML5, CSS3/SASS, Framer Motion, Redux Toolkit, EJS
+          </td>
+        </tr>
+        <tr>
+          <td class="skill-cat-name">Backend &amp; APIs</td>
+          <td class="skill-list">Node.js, Express.js, Java JDBC, RESTful APIs, Streamlit</td>
+        </tr>
+        <tr>
+          <td class="skill-cat-name">Databases</td>
+          <td class="skill-list">MySQL, PostgreSQL, MongoDB, Mongoose ORM</td>
+        </tr>
+        <tr>
+          <td class="skill-cat-name">Tools &amp; Libraries</td>
+          <td class="skill-list">Git, GitHub, Maven, OpenCV, Scikit-Learn, Vitest, Canvas API, EmailJS</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2 class="section-title">Featured Projects</h2>
+
+      <!-- Project 1: MCA Capstone -->
+      <div class="project-entry">
+        <div class="project-top">
+          <span class="project-title">Intelligent Crop and Fertilizer Recommendation System (Explainable AI)</span>
+          <span class="project-tech">Python, Scikit-Learn, SHAP (XAI), Streamlit, Isolation Forest</span>
+        </div>
+        <div class="project-links-line">
+          <a href="synopsis.html" target="_blank">Project Synopsis &amp; Architecture: synopsis.html ↗</a> • <span
+            style="font-size:12px;color:#64748b;">Guide: Prof. Sahitya K | AI &amp; Machine Learning</span>
+        </div>
+        <ul class="bullets">
+          <li>Architected an end-to-end agricultural decision-support system unifying crop recommendation, fertilizer
+            classification, and dosage regression (kg/acre).</li>
+          <li>Integrated unsupervised Isolation Forest to detect corrupted sensor readings and anomalous soil test
+            reports prior to inference.</li>
+          <li>Applied Explainable AI using SHAP (SHapley Additive exPlanations) to interpret feature importance and
+            provide transparent agronomic reasoning.</li>
+          <li>Engineered an interactive Streamlit dashboard featuring automated nutrient-gap calculations, natural vs.
+            chemical fertilizer allocation, and what-if scenario simulations.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-entry">
+        <div class="project-top">
+          <span class="project-title">Road Extraction AI &amp; Pathfinding System</span>
+          <span class="project-tech">Python, OpenCV, Streamlit, Scikit-Learn, XGBoost</span>
+        </div>
+        <div class="project-links-line">
+          <a href="https://github.com/slvp89/road-extraction" target="_blank">Repository:
+            github.com/slvp89/road-extraction ↗</a>
+        </div>
+        <ul class="bullets">
+          <li>Developed a computer vision and machine learning pipeline for automated road segmentation and extraction
+            from satellite imagery.</li>
+          <li>Created a graph-based pathfinding routing algorithm on extracted road networks with real-time route
+            tracing.</li>
+          <li>Built an interactive Streamlit dashboard allowing users to upload satellite tiles, inspect prediction
+            overlays, and calculate routes.</li>
+        </ul>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-entry">
+        <div class="project-top">
+          <span class="project-title">Full-Stack Web Application</span>
+          <span class="project-tech">Node.js, Express.js, MongoDB, Mongoose, EJS</span>
+        </div>
+        <div class="project-links-line">
+          <a href="https://github.com/slvp89/bca-project" target="_blank">Repository: github.com/slvp89/bca-project
+            ↗</a>
+        </div>
+        <ul class="bullets">
+          <li>Developed final-year BCA full-stack application featuring secure session-based authentication and user
+            authorization.</li>
+          <li>Designed RESTful API endpoints and integrated MongoDB schemas with Mongoose for dynamic CRUD data
+            persistence.</li>
+        </ul>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-entry">
+        <div class="project-top">
+          <span class="project-title">PulseDesk — Personalized Content Dashboard</span>
+          <span class="project-tech">Next.js 14, TypeScript, Redux Toolkit, Tailwind CSS, Vitest</span>
+        </div>
+        <div class="project-links-line">
+          <a href="https://github.com/slvp89/personalized-content-dashboard" target="_blank">Repository:
+            github.com/slvp89/personalized-content-dashboard ↗</a>
+        </div>
+        <ul class="bullets">
+          <li>Architected a multi-format intelligence feed platform solving information overload across categorized
+            news, media previews, and social streams.</li>
+          <li>Engineered drag-and-drop feed prioritization using Framer Motion, 350ms debounced search, dark/light theme
+            transitions, and reading analytics.</li>
+          <li>Implemented state persistence via Redux Toolkit and built an internationalization framework supporting 5
+            languages.</li>
+        </ul>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-entry">
+        <div class="project-top">
+          <span class="project-title">Cricketer Management System</span>
+          <span class="project-tech">Core Java, JDBC, MySQL, OOP Architecture</span>
+        </div>
+        <div class="project-links-line">
+          <a href="https://github.com/slvp89/cricketer-management-system" target="_blank">Repository:
+            github.com/slvp89/cricketer-management-system ↗</a>
+        </div>
+        <ul class="bullets">
+          <li>Engineered a modular Java application following the Data Access Object (DAO) pattern to maintain
+            separation of concerns.</li>
+          <li>Implemented SQL CRUD operations via JDBC PreparedStatements, transaction safety, and comprehensive custom
+            exception hierarchies.</li>
+          <li>Utilized Java 8 Streams and Comparators for player performance filtering, sorting, and career statistics
+            generation.</li>
+        </ul>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-entry">
+        <div class="project-top">
+          <span class="project-title">CampusDBApp — Academic Database System</span>
+          <span class="project-tech">Java, JDBC, MySQL, Maven</span>
+        </div>
+        <div class="project-links-line">
+          <a href="https://github.com/slvp89/CampusDBApp" target="_blank">Repository: github.com/slvp89/CampusDBApp
+            ↗</a>
+        </div>
+        <ul class="bullets">
+          <li>Constructed a console database application for academic campus management and student record operations.
+          </li>
+          <li>Structured database connections, SQL query execution, and relational record handling using Maven and
+            MySQL.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+      <h2 class="section-title">Certifications &amp; Training</h2>
+      <div class="cert-grid">
+        <div class="cert-entry">
+          <a href="https://drive.google.com/file/d/1FVygmF0U2wMT10nwRCk7o4I2tk8hcMs9/view" target="_blank"
+            class="cert-title-link">Python for Machine Learning Training ↗</a>
+          <span class="cert-org">IIT Bombay · EduPyramids</span>
+          <span class="cert-score-tag">Score: 94% (May 2026)</span>
+        </div>
+        <div class="cert-entry">
+          <a href="https://drive.google.com/file/d/1nOU1zMOOl-_I0BolInSpY5EnrgXkbo5s/view" target="_blank"
+            class="cert-title-link">Java Business Application Training ↗</a>
+          <span class="cert-org">IIT Bombay · EduPyramids</span>
+          <span class="cert-score-tag">Score: 90% (Jan 2026)</span>
+        </div>
+        <div class="cert-entry">
+          <a href="https://drive.google.com/drive/folders/1vGCqpY0bToLy48Vn829XyL5G_XK207hH?usp=sharing" target="_blank"
+            class="cert-title-link">RDBMS PostgreSQL Training ↗</a>
+          <span class="cert-org">IIT Bombay · EduPyramids</span>
+          <span class="cert-score-tag">Score: 90% (May 2026)</span>
+        </div>
+        <div class="cert-entry">
+          <a href="https://drive.google.com/file/d/1SLeU6MT6TIj7y7QDOmeTMtC7kXqX3Oe1/view" target="_blank"
+            class="cert-title-link">C Programming Training ↗</a>
+          <span class="cert-org">IIT Bombay · EduPyramids</span>
+          <span class="cert-score-tag">Score: 75% (Jan 2026)</span>
+        </div>
+        <div class="cert-entry">
+          <a href="https://drive.google.com/file/d/1gcxWlMtrSISwShWrtMpJUFxjPxPD8a1f/view" target="_blank"
+            class="cert-title-link">Cyber Security Job Simulation ↗</a>
+          <span class="cert-org">Deloitte · Forage</span>
+          <span class="cert-score-tag">Practical Cyber Assessment (Jan 2026)</span>
+        </div>
+        <div class="cert-entry">
+          <a href="https://drive.google.com/file/d/1iG32roFI6DQLeUQnuVBOxUwHglAW4wCs/view" target="_blank"
+            class="cert-title-link">Data Analytics Job Simulation ↗</a>
+          <span class="cert-org">Deloitte · Forage</span>
+          <span class="cert-score-tag">Forensic Tech &amp; Analytics (Jan 2026)</span>
+        </div>
+        <div class="cert-entry">
+          <a href="https://drive.google.com/file/d/1Je09jiFuNYwJikgFCGkRfnqkmx6C-gDa/view" target="_blank"
+            class="cert-title-link">The Joy of Computing using Python ↗</a>
+          <span class="cert-org">NPTEL · IIT Madras</span>
+          <span class="cert-score-tag">Elite Certification · 75%</span>
+        </div>
+        <div class="cert-entry">
+          <a href="https://drive.google.com/file/d/1JuVOzfvabQWvxE4F-zDBzYqUpTVsi7Lm/view" target="_blank"
+            class="cert-title-link">Digital Engineering – Gold Category ↗</a>
+          <span class="cert-org">NASSCOM · FutureSkills Prime</span>
+          <span class="cert-score-tag">Gold Category (Score ≥ 70%)</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+
+</html>

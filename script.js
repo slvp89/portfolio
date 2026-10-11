@@ -93,11 +93,12 @@ animParticles();
 // ---------- COUNTER ANIMATION ----------
 function animateCounter(el) {
   const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : (target >= 10 ? '+' : '');
   let current = 0;
-  const step = Math.ceil(target / 40);
+  const step = Math.max(1, Math.ceil(target / 30));
   const interval = setInterval(() => {
     current = Math.min(current + step, target);
-    el.textContent = current + (target >= 10 ? '+' : '');
+    el.textContent = current + suffix;
     if (current >= target) clearInterval(interval);
   }, 40);
 }
@@ -168,14 +169,7 @@ form.addEventListener('submit', (e) => {
   submitBtn.textContent = 'Sending...';
   submitBtn.disabled = true;
 
-  const templateParams = {
-    name:    document.getElementById('name').value,
-    email:   document.getElementById('email').value,
-    subject: document.getElementById('subject').value,
-    message: document.getElementById('message').value,
-  };
-
-  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+  emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
     .then(() => {
       submitBtn.textContent = 'Send Message ✉️';
       submitBtn.disabled = false;

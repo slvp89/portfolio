@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Synopsis | Intelligent Crop and Fertilizer Recommendation System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #15803d;
+      --primary-dark: #166534;
+      --primary-light: #dcfce7;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --accent: #2563eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 14.5px;
+      padding: 28px 16px;
+    }
+
+    .synopsis-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      padding: 48px 52px;
+      border: 1px solid var(--border);
+    }
+
+    .actions-bar {
+      max-width: 900px;
+      margin: 0 auto 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-back {
+      background: #ffffff;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .btn-back:hover {
+      background: #f1f5f9;
+      color: var(--text-main);
+    }
+
+    .btn-print {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-print:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.25);
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+
+    .academic-tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+
+    h1.project-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      background: #f8fafc;
+      padding: 16px 20px;
+      border-radius: 8px;
+      border: 1px solid #edf2f7;
+      font-size: 13px;
+    }
+
+    .meta-item strong {
+      color: #334155;
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+
+    .meta-item span {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 28px;
+    }
+
+    h2.sec-heading {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1.5px solid #dcfce7;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+
+    p {
+      color: #334155;
+      margin-bottom: 12px;
+    }
+
+    ul,
+    ol {
+      padding-left: 20px;
+      color: #334155;
+      margin-bottom: 14px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    /* Workflow steps */
+    .workflow-list {
+      counter-reset: wf-counter;
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .workflow-list li {
+      counter-increment: wf-counter;
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 10px;
+    }
+
+    .workflow-list li::before {
+      content: counter(wf-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Tech table */
+    .tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 13.5px;
+    }
+
+    .tech-table th,
+    .tech-table td {
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    .tech-table th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--text-main);
+      width: 25%;
+    }
+
+    /* SDG badges */
+    .sdg-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .sdg-card {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 12.5px;
+    }
+
+    .sdg-card strong {
+      display: block;
+      color: #166534;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+        font-size: 12px;
+      }
+
+      .actions-bar {
+        display: none !important;
+      }
+
+      .synopsis-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+
+      @page {
+        margin: 12mm;
+        size: A4;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .synopsis-container {
+        padding: 24px 20px;
+      }
+
+      .sdg-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Actions Bar -->
+  <div class="actions-bar">
+    <a href="index.html#projects" class="action-btn btn-back">← Back to Portfolio</a>
+    <button onclick="window.print()" class="action-btn btn-print">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <div class="synopsis-container">
+    <!-- Header -->
+    <header>
+      <div class="academic-tag">MCA Capstone Project Synopsis • VTU / RNSIT</div>
+      <h1 class="project-title">INTELLIGENT CROP AND FERTILIZER RECOMMENDATION SYSTEM USING EXPLAINABLE AI</h1>
+      <div class="meta-grid">
+        <div class="meta-item">
+          <strong>Candidate</strong>
+          <span>Sanjay D H (1RN25MC086)</span>
+        </div>
+        <div class="meta-item">
+          <strong>Project Guide</strong>
+          <span>Sahitya K, Assistant Professor</span>
+        </div>
+        <div class="meta-item">
+          <strong>Specialization</strong>
+          <span>AI &amp; Machine Learning</span>
+        </div>
+        <div class="meta-item">
+          <strong>Institution &amp; University</strong>
+          <span>RNS Institute of Technology (RNSIT) · VTU</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 1. Introduction -->
+    <section>
+      <h2 class="sec-heading">🌱 1. Introduction</h2>
+      <p>
+        Agriculture requires timely, data-backed decisions regarding crop selection and fertilizer application.
+        Traditional recommendations often overlook soil micronutrient states and microclimatic parameters. Furthermore,
+        existing machine learning recommendation models frequently output "black-box" predictions without transparent
+        reasoning.
+      </p>
+      <p>
+        The <strong>Intelligent Crop and Fertilizer Recommendation System</strong> bridges this gap by uniting
+        supervised classification, regression models, unsupervised anomaly detection, and <strong>Explainable AI
+          (SHAP)</strong>. By analyzing essential soil attributes (Nitrogen, Phosphorus, Potassium, pH, Organic Carbon)
+        alongside climatic factors (temperature, humidity, rainfall), the system determines the optimal crop, prescribes
+        fertilizer type and exact dosage (kg/acre), flags abnormal readings, and delivers feature importance
+        explanations via an interactive Streamlit dashboard.
+      </p>
+    </section>
+
+    <!-- 2. Problem Statement -->
+    <section>
+      <h2 class="sec-heading">⚠️ 2. Problem Statement</h2>
+      <p>
+        Farmers face significant hurdles in selecting suitable crops and determining appropriate fertilizer doses
+        tailored to field conditions. Current systems suffer from three major shortcomings:
+      </p>
+      <ul>
+        <li><strong>Single-task silos:</strong> Systems handle crop selection or fertilizer recommendation independently
+          without unified agronomic synergy.</li>
+        <li><strong>Lack of interpretability:</strong> Machine learning models output results without explaining
+          <em>why</em> a recommendation was made.</li>
+        <li><strong>Sensor / reading anomalies:</strong> Sensor errors or erroneous lab reports lead to corrupted
+          recommendations without automated validation.</li>
+      </ul>
+    </section>
+
+    <!-- 3. Key Objectives -->
+    <section>
+      <h2 class="sec-heading">🎯 3. Project Objectives</h2>
+      <ul>
+        <li>Develop a supervised multi-class classifier to recommend optimal crops based on soil and climate variables.
+        </li>
+        <li>Construct a fertilizer classification model to predict fertilizer type and a regression model to estimate
+          dosage (kg/acre).</li>
+        <li>Detect erroneous or anomalous soil test readings using unsupervised <strong>Isolation Forest</strong>.</li>
+        <li>Integrate <strong>Explainable AI (SHAP)</strong> to identify input feature contributions and build trust
+          with end-users.</li>
+        <li>Perform automated nutrient-gap calculations and rule-based natural vs. chemical fertilizer allocation.</li>
+        <li>Provide interactive "What-If" scenario simulations and deployment via a clean Streamlit dashboard.</li>
+      </ul>
+    </section>
+
+    <!-- 4. Proposed Workflow -->
+    <section>
+      <h2 class="sec-heading">⚙️ 4. System Workflow &amp; Methodology</h2>
+      <ol class="workflow-list">
+        <li><strong>Data Acquisition:</strong> Manual parameter input or automated soil test report extraction via OCR.
+        </li>
+        <li><strong>Preprocessing:</strong> Input sanitation, validation, normalization, and feature formatting.</li>
+        <li><strong>Anomaly Detection:</strong> Isolation Forest checks inputs for sensor corruption or
+          out-of-distribution values.</li>
+        <li><strong>Crop Recommendation:</strong> Supervised classification algorithm predicts the highest-yielding
+          crop.</li>
+        <li><strong>Nutrient Gap Analysis:</strong> Compares current soil N-P-K levels with target crop requirements.
+        </li>
+        <li><strong>Fertilizer Classification:</strong> Classifies recommended fertilizer type (e.g., Urea, DAP,
+          10:26:26, Compost).</li>
+        <li><strong>Dosage Regression:</strong> Estimates required application quantity in kg/acre.</li>
+        <li><strong>Explainability Layer (SHAP):</strong> Calculates SHAP values displaying positive and negative
+          feature contributions.</li>
+        <li><strong>Agronomic Allocation:</strong> Rule-based module splits natural organic vs. chemical fertilizer
+          recommendations.</li>
+        <li><strong>What-If Scenario Simulator:</strong> Allows users to toggle sliders and observe real-time output
+          shifts.</li>
+        <li><strong>Cost &amp; Carbon Footprint:</strong> Evaluates ecological and financial implications across
+          fertilizer options.</li>
+        <li><strong>Interactive Presentation:</strong> Delivers predictions, charts, and explanations through Streamlit.
+        </li>
+      </ol>
+    </section>
+
+    <!-- 5. Technologies Used -->
+    <section>
+      <h2 class="sec-heading">💻 5. Technologies &amp; Tools</h2>
+      <table class="tech-table">
+        <tr>
+          <th>Language &amp; Environment</th>
+          <td>Python 3.10+, VS Code, Jupyter Notebook, Git</td>
+        </tr>
+        <tr>
+          <th>Core ML &amp; XAI</th>
+          <td>Scikit-learn, Random Forest (Classifier &amp; Regressor), Isolation Forest, SHAP (SHapley Additive
+            exPlanations)</td>
+        </tr>
+        <tr>
+          <th>Data &amp; Vision</th>
+          <td>Pandas, NumPy, OpenCV, Tesseract OCR, PyPDF2 / pdfplumber</td>
+        </tr>
+        <tr>
+          <th>Web Platform</th>
+          <td>Streamlit, Matplotlib, Seaborn, Altair / Plotly</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- 6. SDG Alignment -->
+    <section>
+      <h2 class="sec-heading">🌍 6. UN Sustainable Development Goals (SDG) Mapping</h2>
+      <div class="sdg-cards">
+        <div class="sdg-card">
+          <strong>SDG 2: Zero Hunger</strong>
+          Enhances agricultural yield and food security through scientifically tailored crop and nutrient decisions.
+        </div>
+        <div class="sdg-card">
+          <strong>SDG 12: Responsible Consumption</strong>
+          Minimizes chemical fertilizer runoff, preventing soil acidification and groundwater contamination.
+        </div>
+        <div class="sdg-card">
+          <strong>SDG 15: Life on Land</strong>
+          Preserves soil biodiversity and health by advocating balanced organic-chemical fertilizer ratios.
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Conclusion -->
+    <section>
+      <h2 class="sec-heading">📝 7. Conclusion</h2>
+      <p>
+        The <em>Intelligent Crop and Fertilizer Recommendation System</em> provides a unified, explainable
+        decision-support framework that bridges cutting-edge machine learning with real-world agricultural agronomy. Its
+        modular design allows progressive integration from foundational predictive models to advanced OCR report parsing
+        and carbon footprint audits.
+      </p>
+    </section>
+  </div>
+
+</body>
+
+</html>
